@@ -14,6 +14,12 @@
 		E564A3D81F1227BD00F0FF6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E564A3D61F1227BD00F0FF6D /* LaunchScreen.storyboard */; };
 		E564A3E31F1227BD00F0FF6D /* testsocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564A3E21F1227BD00F0FF6D /* testsocketTests.swift */; };
 		E564A3EE1F1227BD00F0FF6D /* testsocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564A3ED1F1227BD00F0FF6D /* testsocketUITests.swift */; };
+		E564A3FE1F12291200F0FF6D /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564A3FD1F12291200F0FF6D /* Socket.swift */; };
+		E564A4011F12292400F0FF6D /* TCPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564A3FF1F12292400F0FF6D /* TCPClient.swift */; };
+		E564A4021F12292400F0FF6D /* UDPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564A4001F12292400F0FF6D /* UDPClient.swift */; };
+		E564A4081F12295900F0FF6D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E564A4041F12295900F0FF6D /* Result.swift */; };
+		E564A4091F12295900F0FF6D /* ytcpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = E564A4061F12295900F0FF6D /* ytcpsocket.c */; };
+		E564A40A1F12295900F0FF6D /* yudpsocket.c in Sources */ = {isa = PBXBuildFile; fileRef = E564A4071F12295900F0FF6D /* yudpsocket.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,14 @@
 		E564A3E91F1227BD00F0FF6D /* testsocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testsocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E564A3ED1F1227BD00F0FF6D /* testsocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testsocketUITests.swift; sourceTree = "<group>"; };
 		E564A3EF1F1227BD00F0FF6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E564A3FD1F12291200F0FF6D /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		E564A3FF1F12292400F0FF6D /* TCPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCPClient.swift; sourceTree = "<group>"; };
+		E564A4001F12292400F0FF6D /* UDPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UDPClient.swift; sourceTree = "<group>"; };
+		E564A4031F12295800F0FF6D /* testsocket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testsocket-Bridging-Header.h"; sourceTree = "<group>"; };
+		E564A4041F12295900F0FF6D /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = SOURCE_ROOT; };
+		E564A4051F12295900F0FF6D /* SwiftSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftSocket.h; sourceTree = SOURCE_ROOT; };
+		E564A4061F12295900F0FF6D /* ytcpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ytcpsocket.c; sourceTree = SOURCE_ROOT; };
+		E564A4071F12295900F0FF6D /* yudpsocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yudpsocket.c; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +91,9 @@
 		E564A3C11F1227BD00F0FF6D = {
 			isa = PBXGroup;
 			children = (
+				E564A3FF1F12292400F0FF6D /* TCPClient.swift */,
+				E564A4001F12292400F0FF6D /* UDPClient.swift */,
+				E564A3FD1F12291200F0FF6D /* Socket.swift */,
 				E564A3CC1F1227BD00F0FF6D /* testsocket */,
 				E564A3E11F1227BD00F0FF6D /* testsocketTests */,
 				E564A3EC1F1227BD00F0FF6D /* testsocketUITests */,
@@ -99,10 +116,15 @@
 			children = (
 				E564A3CD1F1227BD00F0FF6D /* AppDelegate.swift */,
 				E564A3CF1F1227BD00F0FF6D /* ViewController.swift */,
+				E564A4041F12295900F0FF6D /* Result.swift */,
+				E564A4051F12295900F0FF6D /* SwiftSocket.h */,
+				E564A4061F12295900F0FF6D /* ytcpsocket.c */,
+				E564A4071F12295900F0FF6D /* yudpsocket.c */,
 				E564A3D11F1227BD00F0FF6D /* Main.storyboard */,
 				E564A3D41F1227BD00F0FF6D /* Assets.xcassets */,
 				E564A3D61F1227BD00F0FF6D /* LaunchScreen.storyboard */,
 				E564A3D91F1227BD00F0FF6D /* Info.plist */,
+				E564A4031F12295800F0FF6D /* testsocket-Bridging-Header.h */,
 			);
 			path = testsocket;
 			sourceTree = "<group>";
@@ -193,6 +215,8 @@
 				TargetAttributes = {
 					E564A3C91F1227BD00F0FF6D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 423NT4MUQS;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					E564A3DD1F1227BD00F0FF6D = {
@@ -259,8 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E564A40A1F12295900F0FF6D /* yudpsocket.c in Sources */,
+				E564A4081F12295900F0FF6D /* Result.swift in Sources */,
+				E564A4021F12292400F0FF6D /* UDPClient.swift in Sources */,
+				E564A4011F12292400F0FF6D /* TCPClient.swift in Sources */,
 				E564A3D01F1227BD00F0FF6D /* ViewController.swift in Sources */,
 				E564A3CE1F1227BD00F0FF6D /* AppDelegate.swift in Sources */,
+				E564A3FE1F12291200F0FF6D /* Socket.swift in Sources */,
+				E564A4091F12295900F0FF6D /* ytcpsocket.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,10 +444,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 423NT4MUQS;
 				INFOPLIST_FILE = testsocket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = imnu.edu.cn.testsocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "testsocket/testsocket-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,10 +460,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 423NT4MUQS;
 				INFOPLIST_FILE = testsocket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = imnu.edu.cn.testsocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "testsocket/testsocket-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
