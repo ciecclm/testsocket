@@ -13,6 +13,24 @@ class ViewController: UIViewController {
     let port = 8234
     var client: TCPClient?
     var pidP=7
+    var pidI=8
+    var pidD=9
+    let slider = UISlider()
+
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+
+    @IBOutlet weak var pidp: UISlider!
+    @IBOutlet weak var pidi: UISlider!
+    @IBOutlet weak var pidd: UISlider!
+    @IBAction func show(_ sender: Any) {
+        label1.text="\(pidp.value)"
+        label2.text="\(pidi.value)"
+        label3.text="\(pidd.value)"
+
+    }
+    
     var ss:String!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +40,15 @@ class ViewController: UIViewController {
   
     @IBOutlet weak var testView: UITextView!
     @IBAction func SendMessage(_ sender: Any) {
+        pidP=Int(pidp.value)
+        pidI=Int(pidi.value)
+        pidD=Int(pidd.value)
         guard let client = client else { return }
         
         switch client.connect(timeout: 10) {
         case .success:
             appendToTextField(string: "Connected to host \(client.address)")
-            ss=String(format: "%03d",pidP)
+            ss=String(format: "%03d",pidP)+String(format: "%03d",pidI)+String(format: "%03d",pidD)
             if let response = sendRequest(string: ss, using: client) {
                 appendToTextField(string: "Response: \(response)")
             }
